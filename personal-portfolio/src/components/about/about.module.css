@@ -1,9 +1,9 @@
 .container {
   display: flex;
-  justify-content: center; /* Aligns items on the main axis (horizontal by default) */
-  align-items: center; /* Aligns items on the cross axis (vertical by default) */
+  justify-content: center;
+  align-items: center;
   gap: 50px;
-  height: 100vh; /* Sets the height of the container to the full viewport height */
+  height: 100vh;
   margin-left: 200px;
   margin-right: 200px;
 }
@@ -21,7 +21,7 @@
 }
 
 .about {
-  position: relative; /* Added to position your header relative to its normal position */
+  position: relative;
 }
 
 .subSection {
@@ -46,10 +46,9 @@
   bottom: 0px;
   height: 2px;
   border-bottom: 2px solid rgb(11, 36, 177);
-  transition: right 0.3s ease;
+  transition: right 0.5s ease;
 }
 
-/* Hover effect for non-active tabs */
 .subSection:not(.activeTab):hover::after {
   content: '';
   position: absolute;
@@ -58,15 +57,22 @@
   bottom: 0px;
   height: 2px;
   border-bottom: 2px solid rgb(11, 36, 177);
-  transition: right 0.3s ease;
+  transition: right 0.5s ease;
 }
 
-/* No hover effect for active tab */
 .activeTab::after {
   content: none;
 }
 
-/* Active tab style */
 .activeTab {
   border-bottom: 2px solid rgb(11, 36, 177);
+}
+
+.overview {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.fadeIn {
+  opacity: 1;
 }

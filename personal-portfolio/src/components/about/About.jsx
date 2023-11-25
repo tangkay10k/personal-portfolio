@@ -1,6 +1,8 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './about.module.css'
 import content from './aboutme.js'
+import Tab from './Tab'
+import Overview from './Overview'
 
 const About = ({ about }) => {
   const [currentTab, setTab] = useState('Skills')
@@ -20,40 +22,18 @@ const About = ({ about }) => {
       />
       <div>
         <h2 className={styles.about}>About me</h2>
-        {content.split('\n\n').map((paragraph, index) => (
+        {content.aboutMe.split('\n\n').map((paragraph, index) => (
           <p key={index}>{paragraph}</p>
         ))}
         <div className={styles.content}>
-          <span
-            className={`${styles.subSection} ${
-              currentTab === 'Skills' ? styles.activeTab : ''
-            }`}
-            onClick={() => setTab('Skills')}
-          >
-            Skills
-          </span>
-          <span
-            className={`${styles.subSection} ${
-              currentTab === 'Exp' ? styles.activeTab : ''
-            }`}
-            onClick={() => setTab('Exp')}
-          >
-            Experience
-          </span>
-          <span
-            className={`${styles.subSection} ${
-              currentTab === 'Edu' ? styles.activeTab : ''
-            }`}
-            onClick={() => setTab('Edu')}
-          >
-            Education
-          </span>
+          <Tab name="Skills" activeTab={currentTab} setTab={setTab} />
+          <Tab name="Experience" activeTab={currentTab} setTab={setTab} />
+          <Tab name="Education" activeTab={currentTab} setTab={setTab} />
         </div>
+        <Overview currentTab={currentTab} />
       </div>
     </div>
   )
 }
-
-const Overview = () => {}
 
 export default About

@@ -1,10 +1,11 @@
+import React, { useEffect, useState, useRef } from 'react'
 import styles from './nav.module.css'
 import Section from '../section/Section'
 
 const Nav = ({ showNav, home, about, projects, cvTranscript, contact }) => {
   const navStyle = {
     transform: showNav ? 'translateY(0)' : 'translateY(-100%)',
-    transition: 'transform 0.3s ease',
+    transition: 'transform 0.8s ease',
   }
 
   return (
