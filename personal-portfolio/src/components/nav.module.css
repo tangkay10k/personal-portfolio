@@ -1,0 +1,23 @@
+.navbar {
+  background-color: rgb(42, 42, 42);
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.scrollTo {
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  margin-right: 20px;
+}
+
+.scrollTo:hover {
+  text-decoration: underline;
+}
+
+.clickables {
+  height: 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
