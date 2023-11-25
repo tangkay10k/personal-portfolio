@@ -1,0 +1,52 @@
+.formContainer {
+  width: 80vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+@media screen and (max-width: 1000px) {
+  .formContainer {
+    width: 100%;
+  }
+}
+
+input {
+  height: 50px;
+  padding-left: 15px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px; /* Set the font size */
+  font-weight: normal; /* Choose the font weight: normal, bold, etc. */
+  color: #333; /* Set the text color */
+  line-height: 1.5;
+}
+
+textArea {
+  padding: 15px;
+  height: 150px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px; /* Set the font size */
+  font-weight: normal; /* Choose the font weight: normal, bold, etc. */
+  color: #333; /* Set the text color */
+  line-height: 1.5;
+}
+
+.button {
+  background-color: #2a2a2a;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #c9c9c9;
+}

@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from 'react'
 import './App.css'
 import Nav from './components/nav/Nav'
 import About from './components/about/About'
-import Contact from './components/contact/contact'
+import Contact from './components/contact/Contact'
 
 function App() {
   const home = useRef(null)
