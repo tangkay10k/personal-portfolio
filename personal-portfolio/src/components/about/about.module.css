@@ -1,17 +1,40 @@
 .container {
+  flex-direction: row;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 50px;
   height: 100vh;
-  margin-left: 200px;
-  margin-right: 200px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    flex-direction: column; /* Stack elements vertically for smaller screens */
+  }
+
+  .displayPicture {
+    /* Additional styles for the display picture on smaller screens */
+    width: 100%; /* Adjust the width as needed */
+    height: 100%;
+    margin: 0 auto; /* Center the image */
+  }
 }
 
 .displayPicture {
-  width: 300px;
-  height: 300px;
+  width: 70%;
+  height: 70%;
   border-radius: 25px;
+  transition: 0.3s ease;
+}
+
+.displayPicture:hover {
+  transform: scale(1.05);
+}
+
+.text {
+  text-align: justify;
 }
 
 .content {
@@ -21,6 +44,8 @@
 }
 
 .about {
+  margin: 0px;
+  padding: 0px;
   position: relative;
 }
 
@@ -33,7 +58,6 @@
   transition: color 0.3s ease;
 }
 
-/* Hover effect */
 .subSection:hover::after {
   right: 0;
 }
@@ -45,7 +69,7 @@
   right: 100%;
   bottom: 0px;
   height: 2px;
-  border-bottom: 2px solid rgb(11, 36, 177);
+  border-bottom: 2px solid rgb(117, 117, 117);
   transition: right 0.5s ease;
 }
 
@@ -56,7 +80,7 @@
   right: 0;
   bottom: 0px;
   height: 2px;
-  border-bottom: 2px solid rgb(11, 36, 177);
+  border-bottom: 2px solid rgb(117, 117, 117);
   transition: right 0.5s ease;
 }
 
@@ -65,10 +89,11 @@
 }
 
 .activeTab {
-  border-bottom: 2px solid rgb(11, 36, 177);
+  border-bottom: 2px solid rgb(74, 83, 190);
 }
 
 .overview {
+  height: 100px;
   opacity: 0;
   transition: opacity 0.5s ease;
 }

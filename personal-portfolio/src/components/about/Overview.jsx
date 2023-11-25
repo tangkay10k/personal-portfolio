@@ -24,9 +24,9 @@ const Overview = ({ currentTab }) => {
   }, [currentTab])
 
   return (
-    <p className={`${styles.overview} ${fade ? styles.fadeIn : ''}`}>
+    <pre className={`${styles.overview} ${fade ? styles.fadeIn : ''}`}>
       {displayContent}
-    </p>
+    </pre>
   )
 }
 

@@ -7,8 +7,6 @@ import Overview from './Overview'
 const About = ({ about }) => {
   const [currentTab, setTab] = useState('Skills')
 
-  useEffect(() => console.log('Current Tab: ', currentTab), [currentTab])
-
   return (
     <div
       ref={about}
@@ -20,10 +18,12 @@ const About = ({ about }) => {
         alt="Kay Tang"
         className={styles.displayPicture}
       />
-      <div>
-        <h2 className={styles.about}>About me</h2>
+      <div className={styles.about}>
+        <h2>About me</h2>
         {content.aboutMe.split('\n\n').map((paragraph, index) => (
-          <p key={index}>{paragraph}</p>
+          <p className={styles.text} key={index}>
+            {paragraph}
+          </p>
         ))}
         <div className={styles.content}>
           <Tab name="Skills" activeTab={currentTab} setTab={setTab} />
