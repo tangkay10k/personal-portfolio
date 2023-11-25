@@ -43,7 +43,6 @@ function App() {
           <p>Testing!</p>
         </header>
       </div>
-
       <About about={about} />
 
       <div ref={projects} style={{ marginTop: '500px' }}>
@@ -53,7 +52,6 @@ function App() {
       <div ref={cvTranscript} style={{ marginTop: '500px' }}>
         <h2>cv & transcript</h2>
       </div>
-
       <Contact contact={contact} />
     </>
   )
