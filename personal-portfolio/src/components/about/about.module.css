@@ -1,0 +1,72 @@
+.container {
+  display: flex;
+  justify-content: center; /* Aligns items on the main axis (horizontal by default) */
+  align-items: center; /* Aligns items on the cross axis (vertical by default) */
+  gap: 50px;
+  height: 100vh; /* Sets the height of the container to the full viewport height */
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.displayPicture {
+  width: 300px;
+  height: 300px;
+  border-radius: 25px;
+}
+
+.content {
+  display: flex;
+  justify-content: left;
+  gap: 50px;
+}
+
+.about {
+  position: relative; /* Added to position your header relative to its normal position */
+}
+
+.subSection {
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  margin-right: 20px;
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect */
+.subSection:hover::after {
+  right: 0;
+}
+
+.subSection::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: 0px;
+  height: 2px;
+  border-bottom: 2px solid rgb(11, 36, 177);
+  transition: right 0.3s ease;
+}
+
+/* Hover effect for non-active tabs */
+.subSection:not(.activeTab):hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  height: 2px;
+  border-bottom: 2px solid rgb(11, 36, 177);
+  transition: right 0.3s ease;
+}
+
+/* No hover effect for active tab */
+.activeTab::after {
+  content: none;
+}
+
+/* Active tab style */
+.activeTab {
+  border-bottom: 2px solid rgb(11, 36, 177);
+}
