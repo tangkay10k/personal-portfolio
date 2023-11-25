@@ -1,0 +1,103 @@
+.container {
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  height: 100vh;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    flex-direction: column; /* Stack elements vertically for smaller screens */
+  }
+
+  .displayPicture {
+    /* Additional styles for the display picture on smaller screens */
+    width: 100%; /* Adjust the width as needed */
+    height: 100%;
+    margin: 0 auto; /* Center the image */
+  }
+}
+
+.displayPicture {
+  width: 70%;
+  height: 70%;
+  border-radius: 25px;
+  transition: 0.3s ease;
+}
+
+.displayPicture:hover {
+  transform: scale(1.05);
+}
+
+.text {
+  text-align: justify;
+}
+
+.content {
+  display: flex;
+  justify-content: left;
+  gap: 50px;
+}
+
+.about {
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+}
+
+.subSection {
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  margin-right: 20px;
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.subSection:hover::after {
+  right: 0;
+}
+
+.subSection::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: 0px;
+  height: 2px;
+  border-bottom: 2px solid rgb(117, 117, 117);
+  transition: right 0.5s ease;
+}
+
+.subSection:not(.activeTab):hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  height: 2px;
+  border-bottom: 2px solid rgb(117, 117, 117);
+  transition: right 0.5s ease;
+}
+
+.activeTab::after {
+  content: none;
+}
+
+.activeTab {
+  border-bottom: 2px solid rgb(74, 83, 190);
+}
+
+.overview {
+  height: 100px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.fadeIn {
+  opacity: 1;
+}
