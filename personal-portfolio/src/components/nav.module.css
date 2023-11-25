@@ -9,11 +9,25 @@
   cursor: pointer;
   color: rgb(255, 255, 255);
   margin-right: 20px;
+  position: relative;
+  display: inline-block;
 }
 
-.scrollTo:hover {
-  text-decoration: underline;
+.scrollTo:hover::after {
+  right: 0;
 }
+
+.scrollTo::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: -5px;
+  height: 2px;
+  background-color: rgb(255, 255, 255);
+  transition: right 0.3s ease; 
+}
+
 
 .clickables {
   height: 50px;
