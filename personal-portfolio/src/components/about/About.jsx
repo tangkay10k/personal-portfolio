@@ -19,7 +19,7 @@ const About = ({ about }) => {
         className={styles.displayPicture}
       />
       <div className={styles.about}>
-        <h2>About me</h2>
+        <h2>About Me</h2>
         {content.aboutMe.split('\n\n').map((paragraph, index) => (
           <p className={styles.text} key={index}>
             {paragraph}

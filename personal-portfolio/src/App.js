@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from 'react'
 import './App.css'
 import Nav from './components/nav/Nav'
 import About from './components/about/About'
+import Contact from './components/contact/contact'
 
 function App() {
   const home = useRef(null)
@@ -53,9 +54,7 @@ function App() {
         <h2>cv & transcript</h2>
       </div>
 
-      <div ref={contact} style={{ marginTop: '500px' }}>
-        <h2>contact</h2>
-      </div>
+      <Contact contact={contact} />
     </>
   )
 }
