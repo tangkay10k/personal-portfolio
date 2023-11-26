@@ -4,6 +4,7 @@ import About from './components/about/About'
 import Contact from './components/contact/Contact'
 import Home from './components/home/Home'
 import useScroll from './scroll'
+import Projects from './components/Projects/Projects'
 
 function App() {
   const home = useRef(null)
@@ -33,9 +34,7 @@ function App() {
       />
       <Home home={home} />
       <About about={about} />
-      <div ref={projects} style={{ marginTop: '500px' }}>
-        <h2>projects</h2>
-      </div>
+      <Projects projects={projects} />
       <div ref={cvTranscript} style={{ marginTop: '500px' }}>
         <h2>cv & transcript</h2>
       </div>

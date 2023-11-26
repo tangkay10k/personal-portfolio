@@ -60,6 +60,7 @@
   margin-top: 55px;
   background-color: #2a2a2a;
   transition: background-color 0.3s ease;
+  font-family: 'Poppins', sans-serif;
 }
 
 .downloadButton:hover {
