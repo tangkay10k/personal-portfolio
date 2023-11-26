@@ -3,7 +3,7 @@ import styles from './home.module.css'
 import { useEffect, useState } from 'react'
 
 const Home = ({ home }) => {
-  const backgroundImageUrl = '/home2.png'
+  const backgroundImageUrl = '/home.jpeg'
 
   const [scrollY, setScrollY] = useState(0)
   const currentScroll = useScroll()
