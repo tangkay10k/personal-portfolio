@@ -10,7 +10,6 @@ function App() {
   const home = useRef(null)
   const about = useRef(null)
   const projects = useRef(null)
-  const cvTranscript = useRef(null)
   const contact = useRef(null)
   const lastScrollY = useRef(0)
   const currentScrollY = useScroll()
@@ -29,15 +28,11 @@ function App() {
         home={home}
         about={about}
         projects={projects}
-        cvTranscript={cvTranscript}
         contact={contact}
       />
       <Home home={home} />
       <About about={about} />
       <Projects projects={projects} />
-      <div ref={cvTranscript} style={{ marginTop: '500px' }}>
-        <h2>cv & transcript</h2>
-      </div>
       <Contact contact={contact} />
     </>
   )
