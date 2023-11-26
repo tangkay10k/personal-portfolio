@@ -40,11 +40,21 @@
     margin-bottom: 30px;
   }
 
-  .title,
-  .subtitle {
+  .title {
+    font-size: 40px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
+  }
+  .subtitle {
+    font-size: 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+  .addMe {
+    margin-top: 145px;
+    font-size: 15px;
   }
 }
 
@@ -71,11 +81,13 @@
     font-size: 15px;
     margin-top: 5px;
   }
-
-  /* Adjust other elements as needed */
+  .addMe {
+    display: none;
+  }
 }
 
 .socialMedia {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 15px;
@@ -84,6 +96,17 @@
 .icon {
   width: 30px;
   height: 30px;
+  transition: 0.3s ease;
+}
+
+.icon:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.addMe {
+  position: absolute;
+  opacity: 1;
 }
 
 .downloadButton {
