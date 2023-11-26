@@ -18,7 +18,7 @@ const Socials = () => {
     <div className={styles.contactContainer}>
       <h2 className={styles.title}>Contact Me</h2>
       <p className={styles.subtitle}>Connect with me!</p>
-      <a className={styles.socialMedia}>
+      <p className={styles.socialMedia}>
         {socialMedias.map((name) => (
           <SocialIcon
             key={name}
@@ -27,7 +27,7 @@ const Socials = () => {
             onMouseLeave={handleMouseLeave}
           />
         ))}
-      </a>
+      </p>
       <>
         {currentHovered && (
           <p className={styles.addMe}>Add me on {currentHovered}!</p>
