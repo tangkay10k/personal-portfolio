@@ -3,7 +3,7 @@ import styles from './home.module.css'
 import { useEffect, useState } from 'react'
 
 const Home = ({ home }) => {
-  const backgroundImageUrl = '/temp.png'
+  const backgroundImageUrl = '/home2.png'
 
   const [scrollY, setScrollY] = useState(0)
   const currentScroll = useScroll()
@@ -32,7 +32,7 @@ const Home = ({ home }) => {
       >
         <p>Software Engineering Student</p>
         <h1>
-          Hi, I'm <span>Kay Tang</span>
+          Hi, I'm <span>Kay </span>Tang
           <br />
           from New Zealand
         </h1>

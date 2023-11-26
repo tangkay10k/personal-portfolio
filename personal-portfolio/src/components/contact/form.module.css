@@ -20,7 +20,7 @@
 
 input {
   border-radius: 5px;
-  background-color: #949494;
+  background-color: #bbbbbb;
   border: 1px;
   height: 50px;
   padding-left: 15px;
@@ -33,7 +33,7 @@ input {
 
 textArea {
   border-radius: 5px;
-  background-color: #949494;
+  background-color: #bbbbbb;
   padding: 15px;
   height: 150px;
   font-family: 'Poppins', sans-serif;
@@ -44,7 +44,7 @@ textArea {
 }
 
 .button {
-  background-color: #2a2a2a;
+  background-color: #2d5d83;
   font-family: 'Poppins', sans-serif;
   border: none;
   color: white;
@@ -60,5 +60,5 @@ textArea {
 }
 
 .button:hover {
-  background-color: #c9c9c9;
+  background-color: #4f9bd9;
 }

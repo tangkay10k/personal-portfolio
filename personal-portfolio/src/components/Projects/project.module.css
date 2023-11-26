@@ -7,8 +7,10 @@
 }
 
 .title {
+  color: #2e5a88;
   font-size: 50px;
   margin: 0px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .cardContainer {
@@ -26,16 +28,17 @@
 }
 
 .card {
+  background-color: #b9e2f5;
   width: 400px;
   height: 500px;
   margin: 40px;
-  border: 2px solid #ccc;
+  border: 3px solid #4f9bd9;
   border-radius: 20px;
   transition: 0.8 ease;
 }
 
 .card:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .image {
@@ -46,7 +49,8 @@
 }
 
 .projectTitle {
-  color: black;
+  color: #2e5a88;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   font-size: 20px;
 }
 
@@ -57,13 +61,13 @@
   padding: 15px 32px;
   font-size: 16px;
   border: none;
-  background-color: #2a2a2a;
+  background-color: #2d5d83;
   transition: background-color 0.3s ease;
   font-family: 'Poppins', sans-serif;
 }
 
 .button:hover {
-  background-color: #c9c9c9;
+  background-color: #4f9bd9;
 }
 
 @media screen and (max-width: 600px) {

@@ -1,9 +1,22 @@
 .navbar {
-  background-color: rgb(42, 42, 42);
+  background-color: #2d5d83;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.name {
+  color: white;
+  margin-left: 10px;
+  font-size: 30px;
+}
+
+.dot {
+  color: #90e0ef;
 }
 
 .clickables {
