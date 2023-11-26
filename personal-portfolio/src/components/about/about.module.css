@@ -11,14 +11,53 @@
 
 @media screen and (max-width: 1000px) {
   .container {
-    flex-direction: column; /* Stack elements vertically for smaller screens */
+    flex-direction: column;
   }
 
   .displayPicture {
-    /* Additional styles for the display picture on smaller screens */
-    width: 100%; /* Adjust the width as needed */
+    width: 100%;
     height: 100%;
-    margin: 0 auto; /* Center the image */
+    margin: 0 auto;
+    transition: 0.3s ease;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .about {
+    width: 100%;
+    text-align: center;
+  }
+
+  .displayPicture {
+    width: auto;
+    height: auto;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .text {
+    text-align: center;
+  }
+
+  .content {
+    flex-direction: row;
+    align-items: center;
+  }
+  .overview {
+    height: 100px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    align-self: flex-start;
+    width: 90%;
+    text-align: left;
   }
 }
 

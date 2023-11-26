@@ -1,12 +1,18 @@
 .formContainer {
-  width: 80vh;
+  width: 50vw; /* Example: 50% of the viewport width, adjust as needed */
+  margin: auto; /* This will center the formContainer in the flex container */
   display: flex;
   flex-direction: column;
   gap: 10px;
-  flex: 1;
 }
 
 @media screen and (max-width: 1000px) {
+  .formContainer {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
   .formContainer {
     width: 100%;
   }
