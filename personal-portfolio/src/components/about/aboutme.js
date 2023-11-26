@@ -3,7 +3,7 @@ In my free time, I like to play chess and speedcube. I also love to train calist
 to keep myself fit and active to compensate for all the hours sitting at my desk coding Orz.
 
 My interest in speedcubing significantly influenced my decision to specialise in software engineering. 
-In many ways, solving coding problems is similar to solving a Rubik's cube - it requires breaking down 
+In many ways, solving coding problems is similar to solving a Rubik's cube; it requires breaking down 
 the solution into smaller and more manageable parts and finding elegant and efficient 
 solutions to optimise the time taken to complete the cube. My experience in speedcubing has taught me 
 the importance of creativity, attention to detail, and solution optimisation, all of 
