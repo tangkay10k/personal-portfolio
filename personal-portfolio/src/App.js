@@ -1,32 +1,25 @@
 import React, { useRef, useState, useEffect } from 'react'
-import './App.css'
 import Nav from './components/nav/Nav'
 import About from './components/about/About'
-import Contact from './components/contact/contact'
+import Contact from './components/contact/Contact'
+import Home from './components/home/Home'
+import useScroll from './scroll'
+import Projects from './components/Projects/Projects'
 
 function App() {
   const home = useRef(null)
   const about = useRef(null)
   const projects = useRef(null)
-  const cvTranscript = useRef(null)
   const contact = useRef(null)
-
-  const [showNav, setShowNav] = useState(true)
   const lastScrollY = useRef(0)
+  const currentScrollY = useScroll()
+  const [showNav, setShowNav] = useState(true)
 
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY
-      setShowNav(currentScrollY < lastScrollY.current)
-      lastScrollY.current = currentScrollY
-    }
-
-    window.addEventListener('scroll', handleScroll, { passive: true })
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
+    // Show navigation bar based if you scroll up.
+    setShowNav(currentScrollY < lastScrollY.current)
+    lastScrollY.current = currentScrollY
+  }, [currentScrollY])
 
   return (
     <>
@@ -35,25 +28,11 @@ function App() {
         home={home}
         about={about}
         projects={projects}
-        cvTranscript={cvTranscript}
         contact={contact}
       />
-      <div ref={home} className="App">
-        <header className="App-header">
-          <p>Testing!</p>
-        </header>
-      </div>
-
+      <Home home={home} />
       <About about={about} />
-
-      <div ref={projects} style={{ marginTop: '500px' }}>
-        <h2>projects</h2>
-      </div>
-
-      <div ref={cvTranscript} style={{ marginTop: '500px' }}>
-        <h2>cv & transcript</h2>
-      </div>
-
+      <Projects projects={projects} />
       <Contact contact={contact} />
     </>
   )

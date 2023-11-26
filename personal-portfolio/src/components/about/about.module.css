@@ -9,24 +9,12 @@
   margin-right: 100px;
 }
 
-@media screen and (max-width: 1000px) {
-  .container {
-    flex-direction: column; /* Stack elements vertically for smaller screens */
-  }
-
-  .displayPicture {
-    /* Additional styles for the display picture on smaller screens */
-    width: 100%; /* Adjust the width as needed */
-    height: 100%;
-    margin: 0 auto; /* Center the image */
-  }
-}
-
 .displayPicture {
   width: 70%;
   height: 70%;
   border-radius: 25px;
   transition: 0.3s ease;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .displayPicture:hover {
@@ -34,6 +22,7 @@
 }
 
 .text {
+  color: black;
   text-align: justify;
 }
 
@@ -44,6 +33,8 @@
 }
 
 .about {
+  color: #2e5a88;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   margin: 0px;
   padding: 0px;
   position: relative;
@@ -51,7 +42,7 @@
 
 .subSection {
   cursor: pointer;
-  color: rgb(0, 0, 0);
+  color: #2e5a88;
   margin-right: 20px;
   position: relative;
   display: inline-block;
@@ -89,10 +80,11 @@
 }
 
 .activeTab {
-  border-bottom: 2px solid rgb(74, 83, 190);
+  border-bottom: 2px solid #90e0ef;
 }
 
 .overview {
+  color: black;
   height: 100px;
   opacity: 0;
   transition: opacity 0.5s ease;
@@ -100,4 +92,55 @@
 
 .fadeIn {
   opacity: 1;
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .displayPicture {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    transition: 0.3s ease;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .about {
+    width: 100%;
+    text-align: left;
+  }
+
+  .displayPicture {
+    width: auto;
+    height: auto;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .text {
+    text-align: justify;
+  }
+
+  .content {
+    flex-direction: row;
+    align-items: center;
+  }
+  .overview {
+    height: 100px;
+    transition: opacity 0.5s ease;
+    align-self: flex-start;
+    width: 90%;
+    text-align: left;
+  }
 }

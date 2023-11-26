@@ -1,6 +1,6 @@
 .scrollTo {
   cursor: pointer;
-  color: rgb(255, 255, 255);
+  color: #ffffff;
   margin-right: 20px;
   position: relative;
   display: inline-block;
@@ -17,6 +17,6 @@
   right: 100%;
   bottom: -5px;
   height: 2px;
-  background-color: rgb(255, 255, 255);
+  background-color: #90e0ef;
   transition: right 0.3s ease;
 }
