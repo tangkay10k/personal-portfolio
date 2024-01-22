@@ -41,7 +41,7 @@ const Socials = () => {
 const DownloadButton = () => {
   const handleDownload = () => {
     window.open(
-      'https://dl.dropboxusercontent.com/scl/fi/au792q1igndg3xdmhy7b2/CV.pdf?rlkey=awuqh73dgp95koclszg8l7b8g&dl=0',
+      'https://www.dropbox.com/scl/fi/q2090qblku444mx0js4h0/KTANG_CV_JAN_2024.pdf?rlkey=wwhssd3bnksvruof7ra6gozpv&dl=1',
       '_blank'
     )
   }
