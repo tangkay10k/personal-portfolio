@@ -1,3 +1,4 @@
+import React from 'react'
 import styles from './contact.module.css'
 import { useState } from 'react'
 
@@ -41,7 +42,7 @@ const Socials = () => {
 const DownloadButton = () => {
   const handleDownload = () => {
     window.open(
-      'https://www.dropbox.com/scl/fi/q2090qblku444mx0js4h0/KTANG_CV_JAN_2024.pdf?rlkey=wwhssd3bnksvruof7ra6gozpv&dl=1',
+      'https://www.dropbox.com/scl/fi/x91trinupwk0onor7h6m4/KTAN_CV_MAR_2024.pdf?rlkey=7lp7z38v829yuk5heouwg6j3i&dl=1',
       '_blank'
     )
   }

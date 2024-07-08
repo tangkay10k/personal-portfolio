@@ -1,3 +1,4 @@
+import React from 'react'
 import styles from './contact.module.css'
 import Form from './Form'
 import Socials from './Socials'

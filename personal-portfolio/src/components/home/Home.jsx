@@ -1,3 +1,4 @@
+import React from 'react'
 import useScroll from '../../scroll'
 import styles from './home.module.css'
 import { useEffect, useState } from 'react'

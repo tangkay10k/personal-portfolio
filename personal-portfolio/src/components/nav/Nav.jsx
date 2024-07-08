@@ -1,3 +1,4 @@
+import React from 'react'
 import styles from './nav.module.css'
 import Section from '../section/Section'
 

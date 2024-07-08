@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import styles from './about.module.css'
 import content from './aboutme.js'
 import Tab from './Tab'
