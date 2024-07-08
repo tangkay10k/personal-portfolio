@@ -1,7 +1,7 @@
 # syntax = docker/dockerfile:1
 
 # Adjust NODE_VERSION as desired
-ARG NODE_VERSION=21.1.0
+ARG NODE_VERSION=21.6.1
 FROM node:${NODE_VERSION}-slim as base
 
 LABEL fly_launch_runtime="Node.js"
@@ -16,9 +16,13 @@ ENV NODE_ENV="production"
 # Throw-away build stage to reduce size of final image
 FROM base as build
 
-# Install packages needed to build node modules
+# Install packages needed to build node modules. Replace `python-is-python3` with `python3`.
+# Additionally, include `python3-pip` if pip is needed.
 RUN apt-get update -qq && \
-    apt-get install -y build-essential pkg-config python-is-python3
+    apt-get install -y build-essential pkg-config python3
+
+# If you specifically need `python` to map to `python3`, you could add:
+# RUN ln -s /usr/bin/python3 /usr/bin/python
 
 # Install node modules
 COPY --link package-lock.json package.json ./

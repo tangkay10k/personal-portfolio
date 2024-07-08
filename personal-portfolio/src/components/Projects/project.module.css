@@ -4,6 +4,7 @@
   justify-content: center;
   position: relative;
   text-align: center;
+  height: 1200px;
 }
 
 .title {
@@ -15,16 +16,13 @@
 
 .cardContainer {
   display: flex;
-  overflow: hidden;
+  /* overflow: hidden; */
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .projectContainer {
-  display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: center;
 }
 
 .card {
@@ -52,6 +50,7 @@
   color: #2e5a88;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   font-size: 20px;
+  margin-bottom: 1px;
 }
 
 .button {
@@ -64,6 +63,7 @@
   background-color: #2d5d83;
   transition: background-color 0.3s ease;
   font-family: 'Poppins', sans-serif;
+  margin: 2px;
 }
 
 .button:hover {
@@ -89,4 +89,8 @@
     height: 250px;
     border-radius: 20px;
   }
+}
+
+.desc {
+  margin-top: 1px;
 }
