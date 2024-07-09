@@ -1,3 +1,44 @@
+.card {
+  margin: 10px;
+}
+
+.image {
+  object-fit: cover;
+  filter: blur(0.7px);
+  transition: filter 0.3s;
+}
+
+.image:hover {
+  filter: blur(0); /* Remove blur on hover */
+}
+
+.title {
+  font-size: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.desc {
+  text-align: left;
+}
+
+.buttonsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5px;
+}
+
+/* ----------------SECTION CSS--------------------- */
+
+.sectionTitle {
+  justify-content: center;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  font-size: 50px;
+  margin-bottom: 100px;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -7,90 +48,7 @@
   height: 1200px;
 }
 
-.title {
-  color: #2e5a88;
-  font-size: 50px;
-  margin: 0px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.cardContainer {
-  display: flex;
-  /* overflow: hidden; */
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.projectContainer {
-  align-items: center;
-}
-
-.card {
-  background-color: #b9e2f5;
-  width: 400px;
-  height: 500px;
-  margin: 40px;
-  border: 3px solid #4f9bd9;
-  border-radius: 20px;
-  transition: 0.8 ease;
-}
-
-.card:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-.image {
-  width: 300px;
-  height: 300px;
-  margin-top: 40px;
-  border-radius: 20px;
-}
-
-.projectTitle {
-  color: #2e5a88;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  font-size: 20px;
-  margin-bottom: 1px;
-}
-
-.button {
-  color: white;
-  cursor: pointer;
-  border-radius: 4px;
-  padding: 15px 32px;
-  font-size: 16px;
-  border: none;
-  background-color: #2d5d83;
-  transition: background-color 0.3s ease;
-  font-family: 'Poppins', sans-serif;
-  margin: 2px;
-}
-
-.button:hover {
-  background-color: #4f9bd9;
-}
-
-@media screen and (max-width: 600px) {
-  .card {
-    width: calc(100vw - 80px);
-    height: 450px;
-    margin: 20px;
-    border: 2px solid #ccc;
-    border-radius: 20px;
-    box-shadow: none;
-  }
-
-  .card:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-
-  .image {
-    width: 250px;
-    height: 250px;
-    border-radius: 20px;
-  }
-}
-
-.desc {
-  margin-top: 1px;
+.carouselContainer {
+  width: 95%;
+  margin: 0 auto;
 }
