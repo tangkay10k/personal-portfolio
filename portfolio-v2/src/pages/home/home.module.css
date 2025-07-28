@@ -1,0 +1,16 @@
+.homeContainer {
+    position: relative;
+    z-index: var(--layer-1);
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.cardContainer {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translate(-50%, -50%);
+
+    width: var(--card-container-width);
+}

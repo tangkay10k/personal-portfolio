@@ -26,9 +26,21 @@
     --sunpillar-clr-5: var(--sunpillar-5);
     --sunpillar-clr-6: var(--sunpillar-6);
     --card-radius: 30px;
+
+    --layer-1: 0;
+    --layer-2: 1;
+    --layer-3: 2;
+    --layer-4: 3;
+    --layer-5: 4;
+
+    --card-container-width: 20rem;
+
 }
 
-body {
+html, body {
+    margin: 0;
+    padding: 0;
     background-color: black;
-
+    width: 100%;
+    height: 100%;
 }
