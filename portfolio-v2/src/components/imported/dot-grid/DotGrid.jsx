@@ -1,5 +1,5 @@
-'use client';
-import { useRef, useEffect, useCallback, useMemo } from "react";
+"use client";
+import { useCallback, useEffect, useMemo, useRef } from "react";
 import { gsap } from "gsap";
 import { InertiaPlugin } from "gsap/InertiaPlugin";
 
@@ -29,20 +29,20 @@ function hexToRgb(hex) {
 }
 
 const DotGrid = ({
-                   dotSize = 16,
-                   gap = 32,
-                   baseColor = "#5227FF",
-                   activeColor = "#5227FF",
-                   proximity = 150,
-                   speedTrigger = 100,
-                   shockRadius = 250,
-                   shockStrength = 5,
-                   maxSpeed = 5000,
-                   resistance = 750,
-                   returnDuration = 1.5,
-                   className = "",
-                   style,
-                 }) => {
+  dotSize = 16,
+  gap = 32,
+  baseColor = "#5227FF",
+  activeColor = "#5227FF",
+  proximity = 150,
+  speedTrigger = 100,
+  shockRadius = 250,
+  shockStrength = 5,
+  maxSpeed = 5000,
+  resistance = 750,
+  returnDuration = 1.5,
+  className = "",
+  style,
+}) => {
   const wrapperRef = useRef(null);
   const canvasRef = useRef(null);
   const dotsRef = useRef([]);

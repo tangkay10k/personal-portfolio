@@ -1,0 +1,38 @@
+.navBar {
+    position: absolute;
+    top: 2rem;
+
+    height: var(--nav-height);
+
+    z-index: var(--layer-2);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: var(--padding-05) var(--padding-3);
+    border-radius: var(--border-radius-5);
+    border: 0.2rem solid var(--light-grey);
+
+    width: 100%;
+    max-width: 80vw;
+    justify-self: center;
+}
+
+.navBar a {
+    color: var(--white);
+    font-size: var(--font-size-1);
+}
+
+.navBar a:hover {
+    cursor: pointer;
+}
+
+.navBar section {
+    display: flex;
+    gap: var(--padding-3)
+}
+
+.navBar img {
+    height: 2.5rem;
+}
