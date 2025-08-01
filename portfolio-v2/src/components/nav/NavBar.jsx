@@ -2,7 +2,7 @@ import styles from "./nav.module.css";
 import { useNavigate } from "react-router-dom";
 
 export default function NavBar() {
-  const tabs = ["Home", "Experience", "Projects", "Contact"];
+  const tabs = ["Home", "About", "Experience", "Projects", "Contact"];
   const navigate = useNavigate();
 
   function handleNavigate(tab) {

@@ -29,11 +29,11 @@ function hexToRgb(hex) {
 }
 
 const DotGrid = ({
-  dotSize = 16,
+  dotSize = 5,
   gap = 32,
-  baseColor = "#5227FF",
+  baseColor = "#271E37",
   activeColor = "#5227FF",
-  proximity = 150,
+  proximity = 120,
   speedTrigger = 100,
   shockRadius = 250,
   shockStrength = 5,

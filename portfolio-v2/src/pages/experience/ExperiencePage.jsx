@@ -1,7 +1,7 @@
 import styles from "./experience.module.css";
 import { useState } from "react";
 import useForceRerender from "@/hooks/useForceRerender.js";
-import MultiLanyard from "@/components/imported/Components/Lanyard/Multilanyard.jsx";
+import MultiLanyard from "@/components/imported/Lanyard/Multilanyard.jsx";
 
 export default function ExperiencePage() {
   const [cameraDistance, setCameraDistance] = useState(20);

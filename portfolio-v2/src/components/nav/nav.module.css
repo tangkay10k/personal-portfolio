@@ -1,25 +1,23 @@
 .navBar {
     position: absolute;
-    top: 2rem;
+    z-index: var(--layer-2);
 
     height: var(--nav-height);
 
-    z-index: var(--layer-2);
+    width: 100%;
+    max-width: var(--max-width);
+    justify-self: center;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    padding: var(--padding-05) var(--padding-3);
-    border-radius: var(--border-radius-5);
-    border: 0.2rem solid var(--light-grey);
-
-    width: 100%;
-    max-width: 80vw;
-    justify-self: center;
+    padding: var(--padding-2);
 }
 
 .navBar a {
+    position: relative;
+    text-decoration: none;
     color: var(--white);
     font-size: var(--font-size-1);
 }

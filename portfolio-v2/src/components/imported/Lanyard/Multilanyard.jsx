@@ -106,7 +106,7 @@ function Band({
   initialPosition = [0, 4, 30],
   modelPath,
   texturePath,
-  maxSpeed = 50,
+  maxSpeed = 10,
   minSpeed = 0,
 }) {
   const band = useRef();
