@@ -27,6 +27,19 @@
     --sunpillar-clr-6: var(--sunpillar-6);
     --card-radius: 30px;
 
+    --timeline-line-color: #e5e7eb; /* light grey for the vertical line */
+    --timeline-dot-border: #22c55e; /* accent colour for the dot border */
+    --timeline-dot-bg: #ffffff; /* fill for the dot */
+    --timeline-dot-hover-bg: #22c55e; /* fill when the item is hovered */
+    --timeline-card-bg: #ffffff; /* card background */
+    --timeline-card-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
+    --timeline-title-color: #111827; /* dark text for titles */
+    --timeline-company-color: #374151; /* medium text for company names */
+    --timeline-description-color: #4b5563; /* muted text for descriptions */
+    --timeline-date-color: #6b7280; /* subtle text for dates */
+    --timeline-accent-color: #22c55e; /* general accent colour used on hover */
+    --timeline-container-height: 65vh;
+
     --layer-minus-1: -1;
     --layer-1: 0;
     --layer-2: 1;
@@ -41,14 +54,19 @@
 
     /*===COLOURS===*/
     --black: #000000;
+    --grey: #475569;
     --white-hover: #d0d0d0;
     --white: #ffffff;
     --light-light-grey: #e8e8e8;
     --light-grey: #cecece;
 
+    --purple: #4f46e5;
+    --light-purple: #7c3aed;
+
     /*===PADDING===*/
     --padding-05: 0.5rem;
     --padding-1: 1rem;
+    --padding-15: 1.5rem;
     --padding-2: 2rem;
     --padding-3: 3rem;
     --padding-4: 4rem;

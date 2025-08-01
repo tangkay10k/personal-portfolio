@@ -1,0 +1,30 @@
+.pageContainer {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+}
+
+.lanyardContainer {
+    height: 100%;
+    width: 50%;
+}
+
+.title {
+    color: white;
+    padding-left: 7rem;
+    font-size: var(--font-size-4);
+}
+
+.experienceContainer {
+    height: var(--timeline-container-height);
+    align-self: flex-end;
+    justify-self: flex-end;
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-end;
+}
