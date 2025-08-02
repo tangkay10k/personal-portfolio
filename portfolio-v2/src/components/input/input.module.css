@@ -1,0 +1,21 @@
+.textArea,
+.input {
+    background-color: transparent;
+
+    border: 0.01rem solid var(--white);
+
+    padding: var(--padding-1);
+    border-radius: var(--border-radius-1);
+
+    font-family: "Poppins", sans-serif;
+
+    width: 100%;
+
+    color: var(--white);
+}
+
+.input:focus,
+.textArea:focus {
+    outline: none;
+    box-shadow: none;
+}

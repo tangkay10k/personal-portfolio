@@ -9,6 +9,11 @@
     font-family: "Poppins", sans-serif;
 
     transition: all 0.4s ease-in-out;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--padding-05);
 }
 
 .button:hover {

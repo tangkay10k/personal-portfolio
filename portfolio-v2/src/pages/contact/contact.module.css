@@ -1,0 +1,113 @@
+.contactPageContainer {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--white);
+}
+
+.contactPageContainer > section {
+    width: var(--max-width);
+
+    display: flex;
+    padding: var(--padding-5);
+}
+
+.contact {
+    flex: 1;
+    padding: var(--padding-2);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+
+    gap: var(--padding-1);
+}
+
+.contact p {
+    font-size: var(--font-size-3);
+    font-weight: 600;
+    margin: 0;
+}
+
+.downloadBtnContainer {
+    margin-top: var(--padding-2);
+}
+
+.downloadBtnContainer button {
+    border-radius: var(--border-radius-1);
+    background-color: var(--accent-dark);
+    border: 0.01rem solid var(--accent);
+}
+
+.downloadBtnContainer button:hover {
+    background-color: var(--accent);
+}
+
+.connections {
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-05);
+}
+
+.connections section {
+    display: flex;
+    gap: var(--padding-1);
+}
+
+.connections button {
+    padding: 0 !important;
+
+    width: auto;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+.connections button:hover {
+    background-color: transparent;
+    transform: scale(1.02) !important;
+}
+
+.formContainer {
+    flex: 3;
+}
+
+.formContainer form {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+    gap: var(--padding-05);
+
+    height: 100%;
+    border-radius: var(--border-radius-1);
+}
+
+.formContainer button {
+    border-radius: var(--border-radius-1);
+}
+
+.glowPulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 5px rgba(79, 70, 229, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(79, 70, 229, 0.8),
+        0 0 40px rgba(79, 70, 229, 0.3);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(79, 70, 229, 0.5);
+    }
+}
