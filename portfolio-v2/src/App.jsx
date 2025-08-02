@@ -6,6 +6,7 @@ import ExperiencePage from "@/pages/experience/ExperiencePage.jsx";
 import AboutPage from "@/pages/about/About.jsx";
 import ContactPage from "@/pages/contact/Contact.jsx";
 import { Toaster } from "sonner";
+import ProjectsPage from "@/pages/projects/project-page.jsx";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/experience" element={<ExperiencePage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </div>

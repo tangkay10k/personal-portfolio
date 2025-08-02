@@ -1,9 +1,9 @@
-import styles from "./about.module.css";
+import styles from "./project.module.css";
 import ShinyText from "@/components/imported/text/ShinyText.jsx";
 
-export default function AboutPage() {
+export default function ProjectsPage() {
   return (
-    <div className={styles.aboutPageContainer}>
+    <div className={styles.projectPageContainer}>
       <ShinyText text={"👷‍Under construction... Come back later"} />
     </div>
   );
