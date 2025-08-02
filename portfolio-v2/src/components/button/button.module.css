@@ -1,31 +1,31 @@
 .button {
-    background-color: transparent;
-    color: var(--white);
+  background-color: transparent;
+  color: var(--white);
 
-    padding: var(--padding-1) var(--padding-2);
-    border: 0.01rem solid var(--white);
-    border-radius: var(--border-radius-2);
+  padding: var(--padding-1) var(--padding-2);
+  border: 0.01rem solid var(--white);
+  border-radius: var(--border-radius-2);
 
-    font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif;
 
-    transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: var(--padding-05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--padding-05);
 }
 
 .button:hover {
-    cursor: pointer;
-    background-color: rgba(210, 210, 210, 0.5);
+  cursor: pointer;
+  background-color: rgba(210, 210, 210, 0.5);
 }
 
 .button:disabled {
-    cursor: not-allowed;
-    background-color: rgba(210, 210, 210, 0.5);
+  cursor: not-allowed;
+  background-color: rgba(210, 210, 210, 0.5);
 }
 
 .button:disabled:hover {
-    background-color: rgba(210, 210, 210, 0.5);
+  background-color: rgba(210, 210, 210, 0.5);
 }

@@ -1,42 +1,42 @@
 .navBar {
-    position: absolute;
-    z-index: var(--layer-2);
+  position: absolute;
+  z-index: var(--layer-2);
 
-    height: var(--nav-height);
+  height: var(--nav-height);
 
-    width: 100%;
-    max-width: var(--max-width);
-    justify-self: center;
+  width: 100%;
+  max-width: var(--max-width);
+  justify-self: center;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-    padding: var(--padding-2);
+  padding: var(--padding-2);
 }
 
 .navBar a {
-    text-decoration: none;
-    color: var(--white);
-    font-size: var(--font-size-1);
+  text-decoration: none;
+  color: var(--white);
+  font-size: var(--font-size-1);
 
-    transition: all 0.4s;
+  transition: all 0.4s;
 
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 .navBar a:hover {
-    cursor: pointer;
-    color: var(--grey);
+  cursor: pointer;
+  color: var(--grey);
 }
 
 .navBar section {
-    display: flex;
-    gap: var(--padding-3)
+  display: flex;
+  gap: var(--padding-3);
 }
 
 .active {
-    color: var(--accent) !important;
+  color: var(--accent) !important;
 }

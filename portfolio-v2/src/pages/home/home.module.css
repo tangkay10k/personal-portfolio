@@ -1,84 +1,83 @@
 .homeContainer {
-    position: relative;
-    z-index: var(--layer-1);
+  position: relative;
+  z-index: var(--layer-1);
 
-    width: 100%;
-    height: 100vh;
+  width: 100%;
+  height: 100vh;
 
-
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 .background {
-    position: absolute;
-    inset: 0;
+  position: absolute;
+  inset: 0;
 }
 
 .cardContainer {
-    height: 100%;
-    width: var(--card-container-width);
+  height: 100%;
+  width: var(--card-container-width);
 }
 
 .introduction {
 }
 
 .homeContent p {
-    color: var(--white);
+  color: var(--white);
 }
 
 .homeContent {
-    width: var(--max-width);
-    justify-self: center;
-    height: 100%;
+  width: var(--max-width);
+  justify-self: center;
+  height: 100%;
 
-    padding-top: var(--nav-height);
-    padding-left: var(--padding-3);
-    padding-right: var(--padding-4);
+  padding-top: var(--nav-height);
+  padding-left: var(--padding-3);
+  padding-right: var(--padding-4);
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .introduction {
-    display: flex;
-    flex-direction: column;
-    font-size: var(--font-size-2);
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-size-2);
 }
 
 .introduction p {
-    padding: 0;
-    margin: 0;
-    font-size: var(--font-size-6);
-    font-weight: 500;
+  padding: 0;
+  margin: 0;
+  font-size: var(--font-size-6);
+  font-weight: 500;
 }
 
 .buttonContainer {
-    display: flex;
-    justify-content: end;
-    gap: var(--padding-1);
-    margin-top: var(--padding-1);
+  display: flex;
+  justify-content: end;
+  gap: var(--padding-1);
+  margin-top: var(--padding-1);
 }
 
 .learnBtn {
-    background-color: var(--white) !important;
-    color: var(--black) !important;
+  background-color: var(--white) !important;
+  color: var(--black) !important;
 }
 
 .learnBtn:hover {
-    background-color: var(--white-hover) !important;
-    color: var(--black) !important;
+  background-color: var(--white-hover) !important;
+  color: var(--black) !important;
 }
 
 .shinyWrapper {
-    opacity: 0;
-    transition: opacity 0.6s ease-in-out;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
 
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .shinyWrapperVisible {
-    opacity: 1;
+  opacity: 1;
 }

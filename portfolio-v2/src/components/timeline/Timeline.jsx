@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react";
 import { motion } from "framer-motion";
-import styles from "./Timeline.module.css";
+import styles from "./timeline.module.css";
 
 const TimelineItem = ({ item, index }) => (
   <motion.div
