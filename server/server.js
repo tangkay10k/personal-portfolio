@@ -1,24 +1,15 @@
 const express = require("express");
-const app = express();
-require("dotenv").config();
-const cors = require("cors");
-const PORT = process.env.PORT || 8080;
-const contactRoutes = require("./routes/contactRoutes");
 const path = require("path");
+require("dotenv").config();
 
-app.use(express.json());
-app.use(cors());
+const app = express();
+const PORT = process.env.PORT || 8080;
 
-app.use("/api/contact", contactRoutes);
+app.use("/api/contact", require("./routes/contactRoutes"));
 
-app.use(express.static(path.join(__dirname, "../portfolio-v2/dist")));
+const staticDir = path.join(__dirname, "public");
+app.use(express.static(staticDir));
 
-// Fallback to index.html for SPA routes
-app.get(/.*/, (req, res) => {
-  res.sendFile(path.join(__dirname, "../portfolio-v2/dist/index.html"));
-});
-
-// Start the server
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running on port ${PORT}`);
 });
