@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { forwardRef } from "react";
 import { motion } from "framer-motion";
 import styles from "./Timeline.module.css";
 
@@ -20,7 +20,7 @@ const TimelineItem = ({ item, index }) => (
         transition={{ type: "spring", stiffness: 300 }}
       />
     </div>
-    <div className={styles.card}>
+    <div className={`${item.divider ? styles.specialCard : styles.card}`}>
       {item.date && <span className={styles.date}>{item.date}</span>}
       {item.title && <h3 className={styles.title}>{item.title}</h3>}
       {item.company && <h4 className={styles.company}>{item.company}</h4>}
@@ -31,16 +31,19 @@ const TimelineItem = ({ item, index }) => (
   </motion.div>
 );
 
-const Timeline = ({ events = [] }) => {
-  const containerRef = useRef(null);
+const Timeline = forwardRef(({ events = [], onScroll }, ref) => {
   return (
-    <div ref={containerRef} className={styles.timeline}>
+    <div
+      ref={ref}
+      className={`${styles.timeline} ${onScroll ? styles.blur : ""}`}
+    >
+      <div className={styles.firstDot} />
       <div className={styles.line} />
       {events.map((item, idx) => (
-        <TimelineItem item={item} index={idx} key={item.id ?? idx} />
+        <TimelineItem key={item.id ?? idx} item={item} index={idx} />
       ))}
     </div>
   );
-};
+});
 
 export default Timeline;

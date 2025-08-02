@@ -24,27 +24,50 @@ import "./Lanyard.css";
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 
+/**
+ * MultiLanyard: renders multiple lanyard cards, each with its own physics settings.
+ * Each entry in `lanyards` can include a `physics` object:
+ *   angularDamping, linearDamping, initialAngVel ({x,y,z}), sway ({frequency, magnitude}).
+ */
 export default function MultiLanyard({
   lanyards = [
     {
-      position: [-2, 5, 30],
+      position: [1, 4, 30],
       model: "./assets/lanyard/canva.glb",
       texture: "./assets/lanyard/canva-lanyard.png",
+      physics: {
+        angularDamping: 0.1,
+        linearDamping: 0.1,
+        initialAngVel: { x: 0, y: 1.5, z: 0 },
+        sway: { frequency: 0.0015, magnitude: 0.0002 },
+      },
     },
     {
-      position: [0, 5, 30],
+      position: [2.5, 4, 30],
       model: "./assets/lanyard/nzpmc.glb",
       texture: "./assets/lanyard/nzpmc-lanyard.png",
+      physics: {
+        angularDamping: 0.4,
+        linearDamping: 0.3,
+        initialAngVel: { x: 0, y: 0.8, z: 0 },
+        sway: { frequency: 0.0002, magnitude: 0.0001 },
+      },
     },
     {
-      position: [2, 5, 30],
+      position: [4, 4, 30],
       model: "./assets/lanyard/uoa.glb",
       texture: "./assets/lanyard/uoa-lanyard.png",
+      physics: {
+        angularDamping: 0.2,
+        linearDamping: 0.2,
+        initialAngVel: { x: 0, y: 2, z: 0 },
+        sway: { frequency: 0.00012, magnitude: 0.0005 },
+      },
     },
   ],
-  fov = 20,
+  fov = 15,
   transparent = true,
-  gravity = [0, -10, 0],
+  gravity = [-0.8, -9.81, 0.2],
 }) {
   return (
     <div className="lanyard-wrapper">
@@ -56,13 +79,20 @@ export default function MultiLanyard({
         }
       >
         <ambientLight intensity={Math.PI} />
-        <Physics gravity={gravity} timeStep={1 / 60}>
+        <Physics
+          gravity={gravity}
+          timeStep={1 / 60}
+          numSolverIterations={8}
+          maxCcdSubsteps={4}
+          predictionDistance={0.005}
+        >
           {lanyards.map((cfg, idx) => (
             <Band
               key={idx}
               initialPosition={cfg.position}
               modelPath={cfg.model}
               texturePath={cfg.texture}
+              physics={cfg.physics}
             />
           ))}
         </Physics>
@@ -108,6 +138,7 @@ function Band({
   texturePath,
   maxSpeed = 10,
   minSpeed = 0,
+  physics = {},
 }) {
   const band = useRef();
   const fixed = useRef();
@@ -116,21 +147,25 @@ function Band({
   const j3 = useRef();
   const card = useRef();
 
-  // load the per-lanyard model & texture
+  const {
+    angularDamping = 0.2,
+    linearDamping = 0.2,
+    initialAngVel = { x: 0, y: 1, z: 0 },
+    sway = { frequency: 0.5, magnitude: 0.02 },
+  } = physics;
+
   const { nodes, materials } = useGLTF(modelPath);
   const texture = useTexture(texturePath);
 
   const vec = new THREE.Vector3();
-  const ang = new THREE.Vector3();
-  const rot = new THREE.Vector3();
   const dir = new THREE.Vector3();
 
   const segmentProps = {
-    type: "dynamic",
+    // type: "dynamic",
     canSleep: true,
     colliders: false,
-    angularDamping: 4,
-    linearDamping: 4,
+    angularDamping,
+    linearDamping,
   };
 
   const [curve] = useState(
@@ -148,7 +183,6 @@ function Band({
     () => typeof window !== "undefined" && window.innerWidth < 1024,
   );
 
-  // build the chain of rope & spherical joints
   useRopeJoint(fixed, j1, [[0, 0, 0], [0, 0, 0], 1]);
   useRopeJoint(j1, j2, [[0, 0, 0], [0, 0, 0], 1]);
   useRopeJoint(j2, j3, [[0, 0, 0], [0, 0, 0], 1]);
@@ -170,21 +204,25 @@ function Band({
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  useEffect(() => {
+    if (card.current) {
+      card.current.setAngvel(initialAngVel);
+    }
+  }, [initialAngVel]);
+
   useFrame((state, delta) => {
-    // drag logic
     if (dragged) {
       vec.set(state.pointer.x, state.pointer.y, 0.05).unproject(state.camera);
       dir.copy(vec).sub(state.camera.position).normalize();
       vec.add(dir.multiplyScalar(state.camera.position.length()));
       [card, j1, j2, j3, fixed].forEach((r) => r.current?.wakeUp());
-      card.current?.setNextKinematicTranslation({
+      card.current.setNextKinematicTranslation({
         x: vec.x - dragged.x,
         y: vec.y - dragged.y,
         z: vec.z - dragged.z,
       });
     }
 
-    // rope interpolation & card stabilization
     if (fixed.current) {
       [j1, j2].forEach((r) => {
         if (!r.current.lerped)
@@ -204,13 +242,10 @@ function Band({
       curve.points[3].copy(fixed.current.translation());
       band.current.geometry.setPoints(curve.getPoints(32));
 
-      ang.copy(card.current.angvel());
-      rot.copy(card.current.rotation());
-      card.current.setAngvel({
-        x: ang.x,
-        y: ang.y - rot.y * 0.25,
-        z: ang.z,
-      });
+      // perpetual sway
+      const t = state.clock.getElapsedTime();
+      const torque = Math.sin(t * sway.frequency) * sway.magnitude;
+      card.current.applyTorqueImpulse({ x: 0, y: torque * delta, z: 0 }, true);
     }
   });
 
@@ -221,19 +256,20 @@ function Band({
     <>
       <group position={initialPosition}>
         <RigidBody ref={fixed} {...segmentProps} type="fixed" />
-        <RigidBody position={[0.5, 0, 0]} ref={j1} {...segmentProps}>
-          <BallCollider args={[0.1]} />
+        <RigidBody ref={j1} {...segmentProps}>
+          <BallCollider args={[0.15]} contactSkin={0.001} />
         </RigidBody>
-        <RigidBody position={[1, 0, 0]} ref={j2} {...segmentProps}>
-          <BallCollider args={[0.1]} />
+        <RigidBody ref={j2} {...segmentProps}>
+          <BallCollider args={[0.15]} contactSkin={0.001} />
         </RigidBody>
-        <RigidBody position={[1.5, 0, 0]} ref={j3} {...segmentProps}>
-          <BallCollider args={[0.1]} />
+        <RigidBody ref={j3} {...segmentProps}>
+          <BallCollider args={[0.15]} contactSkin={0.001} />
         </RigidBody>
         <RigidBody
-          position={[2, 0, 0]}
           ref={card}
-          {...segmentProps}
+          {...segmentProps} // spread first
+          ccd
+          contactSkin={0.001}
           type={dragged ? "kinematicPosition" : "dynamic"}
         >
           <CuboidCollider args={[0.8, 1.125, 0.01]} />
@@ -277,7 +313,6 @@ function Band({
       <mesh ref={band}>
         <meshLineGeometry />
         <meshLineMaterial
-          color="white"
           depthTest={false}
           resolution={isSmall ? [1000, 2000] : [1000, 1000]}
           useMap

@@ -1,22 +1,28 @@
 import styles from "./nav.module.css";
-import { useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function NavBar() {
   const tabs = ["Home", "About", "Experience", "Projects", "Contact"];
-  const navigate = useNavigate();
-
-  function handleNavigate(tab) {
-    const location = tab === "Home" ? "/" : tab;
-    navigate(location);
-  }
 
   return (
     <nav className={styles.navBar}>
-      <img src={"/assets/favicon.png"} alt={"logo"}></img>
+      <span />
       <section>
-        {tabs.map((tab) => (
-          <a onClick={() => handleNavigate(tab)}>{tab}</a>
-        ))}
+        {tabs.map((tab) => {
+          const path = tab === "Home" ? "/" : `/${tab.toLowerCase()}`;
+          return (
+            <NavLink
+              key={tab}
+              to={path}
+              className={({ isActive }) =>
+                isActive ? styles.active : undefined
+              }
+              end
+            >
+              {tab}
+            </NavLink>
+          );
+        })}
       </section>
     </nav>
   );

@@ -27,18 +27,27 @@
     --sunpillar-clr-6: var(--sunpillar-6);
     --card-radius: 30px;
 
-    --timeline-line-color: #e5e7eb; /* light grey for the vertical line */
-    --timeline-dot-border: #22c55e; /* accent colour for the dot border */
-    --timeline-dot-bg: #ffffff; /* fill for the dot */
-    --timeline-dot-hover-bg: #22c55e; /* fill when the item is hovered */
-    --timeline-card-bg: #ffffff; /* card background */
-    --timeline-card-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
-    --timeline-title-color: #111827; /* dark text for titles */
-    --timeline-company-color: #374151; /* medium text for company names */
-    --timeline-description-color: #4b5563; /* muted text for descriptions */
-    --timeline-date-color: #6b7280; /* subtle text for dates */
-    --timeline-accent-color: #22c55e; /* general accent colour used on hover */
+
+    --accent: #4f46e5; /* primary purple */
+    --accent-light: #a78bfa; /* lighter purple for highlights */
+    --accent-dark: #312e81; /* deep indigo */
+
+    --neutral-900: #111827; /* near-black */
+    --neutral-500: #f3f4f6; /* near-white for main text */
+    --neutral-700: #d1d5db; /* light grey for secondary text */
+
+    /* timeline styles */
+    --timeline-dot-bg: var(--accent);
+    --timeline-card-bg: var(--neutral-900);
+    --timeline-title-color: var(--neutral-500);
+    --timeline-company-color: var(--neutral-700);
+    --timeline-description-color: var(--grey);
+    --timeline-date-color: var(--accent);
+
+    --timeline-card-shadow: 0 0.25rem 0.5rem rgba(161, 0, 255, 0.05);
     --timeline-container-height: 65vh;
+    --timeline-line-left-padding: 0.5rem;
+    --timeline-line-bg-colour: rgba(166, 166, 166, 1);
 
     --layer-minus-1: -1;
     --layer-1: 0;
@@ -47,7 +56,7 @@
     --layer-4: 3;
     --layer-5: 4;
 
-    --max-width: 80vw;
+    --max-width: 90vw;
     --card-container-width: 24rem;
     --home-page-container-height: 70vh;
     --nav-height: 5rem;
@@ -59,6 +68,7 @@
     --white: #ffffff;
     --light-light-grey: #e8e8e8;
     --light-grey: #cecece;
+    --dark-grey: rgba(119, 119, 119, 0.66);
 
     --purple: #4f46e5;
     --light-purple: #7c3aed;
@@ -73,6 +83,7 @@
     --padding-5: 5rem;
 
     /*===BORDER RADIUS===*/
+    --border-radius-05: 0.5rem;
     --border-radius-1: 1rem;
     --border-radius-2: 2rem;
     --border-radius-3: 3rem;

@@ -16,14 +16,20 @@
 }
 
 .navBar a {
-    position: relative;
     text-decoration: none;
     color: var(--white);
     font-size: var(--font-size-1);
+
+    transition: all 0.4s;
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 
 .navBar a:hover {
     cursor: pointer;
+    color: var(--grey);
 }
 
 .navBar section {
@@ -31,6 +37,6 @@
     gap: var(--padding-3)
 }
 
-.navBar img {
-    height: 2.5rem;
+.active {
+    color: var(--accent) !important;
 }

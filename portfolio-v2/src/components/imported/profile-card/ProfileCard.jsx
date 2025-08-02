@@ -39,10 +39,10 @@ const ProfileCardComponent = ({
   mobileTiltSensitivity = 5,
   miniAvatarUrl = "/assets/mini.png",
   name = "Kay Tang",
-  title = "Software Engineer",
+  title = "Perma Tired ",
   handle = "facade",
   status = "Online",
-  contactText = "Contact",
+  contactText = "Connect",
   showUserInfo = true,
   onContactClick,
 }) => {
