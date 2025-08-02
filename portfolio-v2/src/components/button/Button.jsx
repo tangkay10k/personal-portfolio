@@ -1,4 +1,5 @@
 import styles from "./button.module.css";
+import { SpinnerCircular } from "spinners-react";
 
 export default function Button({
   type = "button",
@@ -16,7 +17,7 @@ export default function Button({
       className={`${className} ${styles.button}`}
       {...props}
     >
-      {children}
+      {disabled ? <SpinnerCircular color="var(--grey)" size={20} /> : children}
     </button>
   );
 }

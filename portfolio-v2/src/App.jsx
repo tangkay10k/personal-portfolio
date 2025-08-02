@@ -5,11 +5,21 @@ import "./App.css";
 import ExperiencePage from "@/pages/experience/ExperiencePage.jsx";
 import AboutPage from "@/pages/about/About.jsx";
 import ContactPage from "@/pages/contact/Contact.jsx";
+import { Toaster } from "sonner";
 
 function App() {
   return (
     <div className="App">
       <NavBar />
+      <Toaster
+        toastOptions={{
+          style: {
+            background: "var(--accent-dark)",
+            color: "white",
+            border: "0.01rem solid var(--accent)",
+          },
+        }}
+      />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/experience" element={<ExperiencePage />} />

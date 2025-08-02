@@ -78,9 +78,6 @@
 
 .formContainer {
     flex: 3;
-}
-
-.formContainer form {
     display: flex;
     flex-direction: column;
 
@@ -96,6 +93,7 @@
 }
 
 .glowPulse {
+    transition: 0.4s all;
     animation: pulse 2s ease-in-out infinite;
 }
 

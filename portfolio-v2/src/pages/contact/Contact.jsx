@@ -11,10 +11,45 @@ import {
   AiOutlineInstagram as InstaIcon,
 } from "react-icons/ai";
 import { FaTelegramPlane as SendIcon } from "react-icons/fa";
+import { useState } from "react";
+import { sendMessage } from "@/routes/contact-route.js";
+import { toast } from "sonner";
+import isFormValid, { isFormFilled } from "@/pages/contact/contact-utils.js";
 
 const PAGE_DELAY = 1000;
+const CV_PATH = "/resources/cv.pdf";
 
 export default function ContactPage() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!isFormValid(formData)) return;
+    setIsSubmitting(true);
+    sendMessage(formData)
+      .then(() =>
+        toast.success(
+          "📬Your message has been sent! I'll be in touch shortly :)",
+        ),
+      )
+      .catch(() => toast.error("Something went wrong :/ Please try again."))
+      .finally(() => setIsSubmitting(false));
+  };
+
+  const handleCVDownload = () => {
+    window.open(CV_PATH, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <div className={styles.contactPageContainer}>
       <section>
@@ -23,20 +58,46 @@ export default function ContactPage() {
           <Connections />
 
           <Delayed delay={PAGE_DELAY} className={styles.downloadBtnContainer}>
-            <Button>Download CV</Button>
+            <Button
+              onClick={() =>
+                handleOpen(CV_PATH, "_blank", "noopener, noreferrer")
+              }
+            >
+              Download CV
+            </Button>
           </Delayed>
         </div>
 
         <Delayed delay={PAGE_DELAY} className={styles.formContainer}>
-          <form>
-            <Input placeholder={"Your Name"} required />
-            <Input placeholder={"Your Email"} required />
-            <TextArea rows={15} placeholder={"Your Message"} required />
-            <Button type={"submit"}>
-              <SendIcon />
-              Send
-            </Button>
-          </form>
+          <Input
+            name="name"
+            placeholder={"Your Name"}
+            value={formData.name}
+            onChange={handleChange}
+          />
+          <Input
+            name="email"
+            type={"email"}
+            placeholder={"Your Email"}
+            value={formData.email}
+            onChange={handleChange}
+          />
+          <TextArea
+            name="message"
+            rows={15}
+            value={formData.message}
+            onChange={handleChange}
+            placeholder={"Your Message"}
+          />
+          <Button
+            type={"submit"}
+            onClick={handleSubmit}
+            disabled={isSubmitting}
+            className={isFormFilled(formData) ? styles.glowPulse : ""}
+          >
+            <SendIcon />
+            Send
+          </Button>
         </Delayed>
       </section>
     </div>
@@ -50,24 +111,24 @@ function Connections() {
     "https://www.instagram.com/kaytang_",
   ];
 
-  const handleOpen = (idx) => {
-    window.open(links[idx]);
-  };
-
   return (
     <Delayed delay={PAGE_DELAY} className={styles.connections}>
       <ShinyText text="Let's Connect!" />
       <section>
-        <Button onClick={() => handleOpen(0)}>
+        <Button onClick={() => handleOpen(links[0])}>
           <GithubIcon size={30} />
         </Button>
-        <Button onClick={() => handleOpen(1)}>
+        <Button onClick={() => handleOpen(links[1])}>
           <LinkedInIcon size={30} />
         </Button>
-        <Button onClick={() => handleOpen(2)}>
+        <Button onClick={() => handleOpen(links[2])}>
           <InstaIcon size={30} />
         </Button>
       </section>
     </Delayed>
   );
+}
+
+function handleOpen(path, target = null, features = null) {
+  window.open(path, target, features);
 }
