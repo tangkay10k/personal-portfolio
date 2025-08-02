@@ -8,8 +8,13 @@ app.use(express.json());
 
 app.use("/api/contact", require("./routes/contactRoutes"));
 
-const staticDir = path.join(__dirname, "public");
-app.use(express.static(staticDir));
+if (process.env.NODE_ENV === "production") {
+  const root = path.join(__dirname, "public");
+  app.use(express.static(root));
+  app.get("/{*splat}", (req, res) => {
+    res.sendFile("index.html", { root });
+  });
+}
 
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server running on port ${PORT}`);
