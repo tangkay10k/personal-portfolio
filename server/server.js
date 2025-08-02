@@ -11,11 +11,11 @@ app.use(cors());
 
 app.use("/api/contact", contactRoutes);
 
-app.use(express.static(path.join(__dirname, "../client/dist")));
+app.use(express.static(path.join(__dirname, "../portfolio-v2/dist")));
 
 // Fallback to index.html for SPA routes
 app.get(/.*/, (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/dist/index.html"));
+  res.sendFile(path.join(__dirname, "../portfolio-v2/dist/index.html"));
 });
 
 // Start the server
