@@ -1,130 +1,132 @@
 :root {
-    --pointer-x: 50%;
-    --pointer-y: 50%;
-    --pointer-from-center: 0;
-    --pointer-from-top: 0.5;
-    --pointer-from-left: 0.5;
-    --card-opacity: 0;
-    --rotate-x: 0deg;
-    --rotate-y: 0deg;
-    --background-x: 50%;
-    --background-y: 50%;
-    --grain: none;
-    --icon: none;
-    --behind-gradient: none;
-    --inner-gradient: none;
-    --sunpillar-1: hsl(2, 100%, 73%);
-    --sunpillar-2: hsl(53, 100%, 69%);
-    --sunpillar-3: hsl(93, 100%, 69%);
-    --sunpillar-4: hsl(176, 100%, 76%);
-    --sunpillar-5: hsl(228, 100%, 74%);
-    --sunpillar-6: hsl(283, 100%, 73%);
-    --sunpillar-clr-1: var(--sunpillar-1);
-    --sunpillar-clr-2: var(--sunpillar-2);
-    --sunpillar-clr-3: var(--sunpillar-3);
-    --sunpillar-clr-4: var(--sunpillar-4);
-    --sunpillar-clr-5: var(--sunpillar-5);
-    --sunpillar-clr-6: var(--sunpillar-6);
-    --card-radius: 30px;
+  --pointer-x: 50%;
+  --pointer-y: 50%;
+  --pointer-from-center: 0;
+  --pointer-from-top: 0.5;
+  --pointer-from-left: 0.5;
+  --card-opacity: 0;
+  --rotate-x: 0deg;
+  --rotate-y: 0deg;
+  --background-x: 50%;
+  --background-y: 50%;
+  --grain: none;
+  --icon: none;
+  --behind-gradient: none;
+  --inner-gradient: none;
+  --sunpillar-1: hsl(2, 100%, 73%);
+  --sunpillar-2: hsl(53, 100%, 69%);
+  --sunpillar-3: hsl(93, 100%, 69%);
+  --sunpillar-4: hsl(176, 100%, 76%);
+  --sunpillar-5: hsl(228, 100%, 74%);
+  --sunpillar-6: hsl(283, 100%, 73%);
+  --sunpillar-clr-1: var(--sunpillar-1);
+  --sunpillar-clr-2: var(--sunpillar-2);
+  --sunpillar-clr-3: var(--sunpillar-3);
+  --sunpillar-clr-4: var(--sunpillar-4);
+  --sunpillar-clr-5: var(--sunpillar-5);
+  --sunpillar-clr-6: var(--sunpillar-6);
+  --card-radius: 30px;
 
-    --accent: #4f46e5; /* primary purple */
-    --accent-light: #a78bfa; /* lighter purple for highlights */
-    --accent-dark: #312e81; /* deep indigo */
+  --accent: #4f46e5; /* primary purple */
+  --accent-light: #a78bfa; /* lighter purple for highlights */
+  --accent-dark: #312e81; /* deep indigo */
 
-    --neutral-900: #111827; /* near-black */
-    --neutral-500: #f3f4f6; /* near-white for main text */
-    --neutral-700: #d1d5db; /* light grey for secondary text */
+  --neutral-900: #111827; /* near-black */
+  --neutral-500: #f3f4f6; /* near-white for main text */
+  --neutral-700: #d1d5db; /* light grey for secondary text */
 
-    /* timeline styles */
-    --timeline-dot-bg: var(--accent);
-    --timeline-card-bg: var(--neutral-900);
-    --timeline-title-color: var(--neutral-500);
-    --timeline-company-color: var(--neutral-700);
-    --timeline-description-color: var(--grey);
-    --timeline-date-color: var(--accent);
+  /* timeline styles */
+  --timeline-dot-bg: var(--accent);
+  --timeline-card-bg: var(--neutral-900);
+  --timeline-title-color: var(--neutral-500);
+  --timeline-company-color: var(--neutral-700);
+  --timeline-description-color: var(--grey);
+  --timeline-date-color: var(--accent);
 
-    --timeline-card-shadow: 0 0.25rem 0.5rem rgba(161, 0, 255, 0.05);
-    --timeline-container-height: 80vh;
-    --timeline-line-left-padding: 0.5rem;
-    --timeline-line-bg-colour: rgba(166, 166, 166, 1);
+  --timeline-card-shadow: 0 0.25rem 0.5rem rgba(161, 0, 255, 0.05);
+  --timeline-container-height: 80vh;
+  --timeline-line-left-padding: 0.5rem;
+  --timeline-line-bg-colour: rgba(166, 166, 166, 1);
 
-    --half-view-width: 50vw;
+  --half-view-width: 50vw;
 
-    --layer-minus-1: -1;
-    --layer-1: 0;
-    --layer-2: 1;
-    --layer-3: 2;
-    --layer-4: 3;
-    --layer-5: 4;
+  --layer-minus-1: -1;
+  --layer-1: 0;
+  --layer-2: 1;
+  --layer-3: 2;
+  --layer-4: 3;
+  --layer-5: 4;
 
-    --max-width: 90vw;
-    --card-container-width: 24rem;
+  --max-width: 90vw;
+  --card-container-width: 24rem;
 
-    --home-page-container-height: 70vh;
-    --nav-height: 5rem;
-    --project-text-card-height: 33vh;
+  --home-page-container-height: 70vh;
+  --nav-height: 5rem;
+  --project-text-card-height: 33vh;
 
-    --full-showcase-card-width: 50vw;
-    --project-showcase-image-container: calc(65vh - var(--project-text-card-height));
+  --full-showcase-card-width: 50vw;
+  --project-showcase-image-container: calc(
+    65vh - var(--project-text-card-height)
+  );
 
-    /*===COLOURS===*/
-    --black: #000000;
-    --grey: #475569;
-    --white-hover: #d0d0d0;
-    --white: #ffffff;
-    --light-light-grey: #e8e8e8;
-    --light-grey: #cecece;
-    --dark-grey: rgba(119, 119, 119, 0.66);
+  /*===COLOURS===*/
+  --black: #000000;
+  --grey: #475569;
+  --white-hover: #d0d0d0;
+  --white: #ffffff;
+  --light-light-grey: #e8e8e8;
+  --light-grey: #cecece;
+  --dark-grey: rgba(119, 119, 119, 0.66);
 
-    --purple-light: #5a52e3;
-    --purple: #4f46e5;
-    --light-purple: #7c3aed;
+  --purple-light: #5a52e3;
+  --purple: #4f46e5;
+  --light-purple: #7c3aed;
 
-    /*===PADDING===*/
-    --padding-05: 0.5rem;
-    --padding-08: 0.8rem;
-    --padding-1: 1rem;
-    --padding-15: 1.5rem;
-    --padding-2: 2rem;
-    --padding-3: 3rem;
-    --padding-4: 4rem;
-    --padding-5: 5rem;
+  /*===PADDING===*/
+  --padding-05: 0.5rem;
+  --padding-08: 0.8rem;
+  --padding-1: 1rem;
+  --padding-15: 1.5rem;
+  --padding-2: 2rem;
+  --padding-3: 3rem;
+  --padding-4: 4rem;
+  --padding-5: 5rem;
 
-    /*===BORDER RADIUS===*/
-    --border-radius-05: 0.5rem;
-    --border-radius-1: 1rem;
-    --border-radius-2: 2rem;
-    --border-radius-3: 3rem;
-    --border-radius-4: 4rem;
-    --border-radius-5: 5rem;
+  /*===BORDER RADIUS===*/
+  --border-radius-05: 0.5rem;
+  --border-radius-1: 1rem;
+  --border-radius-2: 2rem;
+  --border-radius-3: 3rem;
+  --border-radius-4: 4rem;
+  --border-radius-5: 5rem;
 
-    /*===FONT SIZE===*/
-    --font-size-08: 0.8rem;
-    --font-size-1: 1rem;
-    --font-size-12: 1.2rem;
-    --font-size-15: 1.5rem;
-    --font-size-2: 2rem;
-    --font-size-3: 3rem;
-    --font-size-4: 4rem;
-    --font-size-5: 5rem;
-    --font-size-6: 6rem;
+  /*===FONT SIZE===*/
+  --font-size-08: 0.8rem;
+  --font-size-1: 1rem;
+  --font-size-12: 1.2rem;
+  --font-size-15: 1.5rem;
+  --font-size-2: 2rem;
+  --font-size-3: 3rem;
+  --font-size-4: 4rem;
+  --font-size-5: 5rem;
+  --font-size-6: 6rem;
 }
 
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
 body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    min-height: 100vh;
-    background-color: black;
-    font-family: "Poppins", sans-serif;
-    overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: black;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
