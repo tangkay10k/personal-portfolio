@@ -44,9 +44,11 @@
     --timeline-date-color: var(--accent);
 
     --timeline-card-shadow: 0 0.25rem 0.5rem rgba(161, 0, 255, 0.05);
-    --timeline-container-height: 65vh;
+    --timeline-container-height: 80vh;
     --timeline-line-left-padding: 0.5rem;
     --timeline-line-bg-colour: rgba(166, 166, 166, 1);
+
+    --half-view-width: 50vw;
 
     --layer-minus-1: -1;
     --layer-1: 0;
@@ -57,9 +59,13 @@
 
     --max-width: 90vw;
     --card-container-width: 24rem;
+
     --home-page-container-height: 70vh;
     --nav-height: 5rem;
-    --project-text-card-height: 30rem;
+    --project-text-card-height: 33vh;
+
+    --full-showcase-card-width: 50vw;
+    --project-showcase-image-container: calc(65vh - var(--project-text-card-height));
 
     /*===COLOURS===*/
     --black: #000000;
@@ -76,6 +82,7 @@
 
     /*===PADDING===*/
     --padding-05: 0.5rem;
+    --padding-08: 0.8rem;
     --padding-1: 1rem;
     --padding-15: 1.5rem;
     --padding-2: 2rem;

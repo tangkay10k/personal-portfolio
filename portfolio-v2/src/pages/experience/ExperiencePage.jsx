@@ -15,6 +15,8 @@ export default function ExperiencePage() {
 
   return (
     <div className={styles.pageContainer}>
+      <Aurora />
+
       <div className={styles.experienceContainer}>
         <SplitText text={"Work Experience"} />
 
@@ -37,8 +39,6 @@ export default function ExperiencePage() {
       <div className={styles.lanyardContainer}>
         <MultiLanyard />
       </div>
-
-      <Aurora />
     </div>
   );
 }

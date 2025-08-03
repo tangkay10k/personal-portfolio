@@ -17,12 +17,23 @@ export default function ProjectsPage() {
 
   return (
     <div className={styles.projectPageContainer}>
-      <div className={styles.cardSwapContainer}>
+      <div className={styles.aboutContainer}>
         <ShowCaseAbout
           setCurrentIndex={setCurrentIndex}
           currentIndex={currentIndex}
           projectOnDisplay={projectOnDisplay}
         />
+
+        <Delayed
+          delay={PROJECTS_DELAY}
+          customIn={styles.flyInFromBottom}
+          customOut={styles.flyHidden}
+        >
+          <ShowCase projectOnDisplay={projectOnDisplay} />
+        </Delayed>
+      </div>
+
+      <div className={styles.cardSwapContainer}>
         <Delayed delay={PROJECTS_DELAY}>
           <CardSwap pauseOnHover={true}>
             {PROJECTS.map((project) => (
@@ -37,14 +48,6 @@ export default function ProjectsPage() {
           </CardSwap>
         </Delayed>
       </div>
-
-      <Delayed
-        delay={PROJECTS_DELAY}
-        customIn={styles.flyInFromBottom}
-        customOut={styles.flyHidden}
-      >
-        <ShowCase projectOnDisplay={projectOnDisplay} />
-      </Delayed>
     </div>
   );
 }
