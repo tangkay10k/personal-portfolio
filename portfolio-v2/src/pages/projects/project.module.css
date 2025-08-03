@@ -1,6 +1,4 @@
 .projectPageContainer {
-    position: relative;
-
     width: 100%;
     height: 100vh;
 
@@ -16,7 +14,7 @@
 
 .cardBody {
     width: 50%;
-    height: 30rem;
+    height: var(--project-text-card-height);
     padding-left: var(--padding-5);
     padding-top: var(--padding-5);
 
@@ -76,7 +74,6 @@
 
 /*===*/
 
-
 /*===CARDS===*/
 .projectDisplayCard {
     overflow: hidden;
@@ -116,9 +113,7 @@
 
     border-radius: var(--border-radius-3);
     /*border: 0.01rem solid var(--white);*/
-    margin: 10rem;
 }
-
 
 .showCaseContainer {
     position: absolute;
@@ -140,11 +135,17 @@
     border-radius: 0.5rem 0.5rem 0 0;
     transition: box-shadow 0.3s ease-in-out;
     z-index: 0;
-
 }
 
 .showCaseCard {
-    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460, #533483, #8b5cf6);
+    background: linear-gradient(
+            135deg,
+            #1a1a2e,
+            #16213e,
+            #0f3460,
+            #533483,
+            #8b5cf6
+    );
 
     backdrop-filter: blur(0.5rem);
 
@@ -155,7 +156,6 @@
 
     overflow: hidden;
 }
-
 
 .showCaseContainer img {
     width: 100%;
@@ -194,4 +194,3 @@
         opacity: 1;
     }
 }
-

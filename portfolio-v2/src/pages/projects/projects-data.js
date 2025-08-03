@@ -10,10 +10,10 @@ export const PROJECTS = [
   {
     title: "Probeable Problems",
     desc:
-      "Probeable Problems is a web application build for my honours research project that delivers" +
+      "Probeable Problems is a web application build for my honours research project that delivers " +
       "introductory programming problem to students to learn programming",
-    animatedImageUrl: "assets/cards/rendezvous.gif",
-    staticImageUrl: "assets/cards/rendezvous.jpeg",
+    animatedImageUrl: "assets/cards/probeable-problems.gif",
+    staticImageUrl: "assets/cards/probeable-problems.png",
     demoUrl:
       "https://probeable-problems-837455747674.australia-southeast1.run.app/",
   },
