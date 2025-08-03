@@ -15,6 +15,7 @@ import { useState } from "react";
 import { sendMessage } from "@/routes/contact-route.js";
 import { toast } from "sonner";
 import isFormValid, { isFormFilled } from "@/pages/contact/contact-utils.js";
+import { handleOpen } from "@/common/utils.js";
 
 const PAGE_DELAY = 1000;
 const CV_PATH = "/resources/cv.pdf";
@@ -44,10 +45,6 @@ export default function ContactPage() {
       )
       .catch(() => toast.error("Something went wrong :/ Please try again."))
       .finally(() => setIsSubmitting(false));
-  };
-
-  const handleCVDownload = () => {
-    window.open(CV_PATH, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -127,8 +124,4 @@ function Connections() {
       </section>
     </Delayed>
   );
-}
-
-function handleOpen(path, target = null, features = null) {
-  window.open(path, target, features);
 }

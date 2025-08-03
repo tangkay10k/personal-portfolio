@@ -29,15 +29,18 @@
 
 .homeContent {
   width: var(--max-width);
+
   justify-self: center;
+
+  justify-content: center;
+
+  gap: 25rem;
+
   height: 100%;
 
   padding-top: var(--nav-height);
-  padding-left: var(--padding-3);
-  padding-right: var(--padding-4);
 
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
@@ -62,13 +65,12 @@
 }
 
 .learnBtn {
-  background-color: var(--white) !important;
-  color: var(--black) !important;
+  background-color: var(--purple) !important;
+  border: none !important;
 }
 
 .learnBtn:hover {
-  background-color: var(--white-hover) !important;
-  color: var(--black) !important;
+  background-color: var(--purple-light) !important;
 }
 
 .shinyWrapper {
