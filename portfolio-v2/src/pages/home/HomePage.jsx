@@ -6,17 +6,22 @@ import ShinyText from "@/components/imported/text/ShinyText.jsx";
 import { Delayed } from "@/components/delay/Delayed.jsx";
 import Button from "@/components/button/Button.jsx";
 import { useNavigate } from "react-router-dom";
+import { handleOpen } from "@/common/utils.js";
 
 const HEADING_TEXT_DURATION = 1.1 * 1000; // ms
 
 export default function HomePage() {
+  const openLinkedIn = () => {
+    handleOpen("https://www.linkedin.com/in/tangkay10k/");
+  };
+
   return (
     <div className={styles.homeContainer}>
       <div className={styles.homeContent}>
         <WelcomeText />
         <Delayed delay={HEADING_TEXT_DURATION}>
           <section className={styles.cardContainer}>
-            <ProfileCard />
+            <ProfileCard onContactClick={openLinkedIn} />
           </section>
         </Delayed>
       </div>
@@ -31,7 +36,10 @@ function WelcomeText() {
     <section className={styles.introduction}>
       <SplitText text="Hi, I'm Kay" />
       <Delayed delay={HEADING_TEXT_DURATION}>
-        <ShinyText text="Software Engineering Student" />
+        <ShinyText
+          text="Software Engineering Student"
+          className={styles.subheading}
+        />
         <section className={styles.buttonContainer}>
           <Button
             className={styles.learnBtn}

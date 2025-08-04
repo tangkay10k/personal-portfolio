@@ -11,7 +11,7 @@ export const PROJECTS = [
     title: "Probeable Problems",
     desc:
       "Probeable Problems is a web application build for my honours research project that delivers " +
-      "AI Resistant introductory programming problem to students to learn programming",
+      "AI resistant introductory programming problem to students to learn programming",
     animatedImageUrl: "assets/cards/probeable-problems.gif",
     staticImageUrl: "assets/cards/probeable-problems.png",
     demoUrl:

@@ -99,7 +99,6 @@
 
 .card {
   margin-left: 2rem;
-
   border-radius: var(--border-radius-05);
   box-shadow: var(--timeline-card-shadow);
   padding: var(--padding-1) var(--padding-15);
@@ -172,5 +171,11 @@
 
   .description {
     font-size: 0.8125rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .card {
+    background-color: rgba(0, 0, 0, 0.5);
   }
 }

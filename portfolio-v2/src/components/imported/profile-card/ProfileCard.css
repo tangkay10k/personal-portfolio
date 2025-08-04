@@ -3,6 +3,8 @@
   transform: translate3d(0, 0, 0.1px);
   position: relative;
   touch-action: none;
+
+  justify-items: center;
 }
 
 .pc-card-wrapper::before {
@@ -326,11 +328,13 @@
   border-radius: 8px;
   padding: 8px 16px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 400;
   color: rgba(255, 255, 255, 0.9);
   cursor: pointer;
   transition: all 0.2s ease;
   backdrop-filter: blur(10px);
+
+  background-color: transparent;
 }
 
 .pc-contact-btn:hover {
@@ -374,7 +378,7 @@
 }
 
 .pc-details p {
-  font-weight: 600;
+  font-weight: 400;
   position: relative;
   top: -12px;
   white-space: nowrap;

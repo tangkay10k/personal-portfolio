@@ -83,3 +83,33 @@
 .shinyWrapperVisible {
   opacity: 1;
 }
+
+/*===Tablet===*/
+@media screen and (max-width: 1024px) {
+  .homeContent {
+    gap: 5rem;
+  }
+
+  .introduction p {
+    font-size: var(--font-size-5);
+  }
+}
+
+/*===Mobile===*/
+@media screen and (max-width: 768px) {
+  .homeContent {
+    gap: 2rem;
+  }
+
+  .introduction p {
+    font-size: var(--font-size-3);
+  }
+
+  .subheading {
+    font-size: var(--font-size-12);
+  }
+
+  .buttonContainer button {
+    padding: var(--padding-08) var(--padding-15);
+  }
+}

@@ -127,8 +127,6 @@
 }
 
 .showCaseContainer {
-  position: absolute;
-
   box-shadow:
     0 -19px 100px #9533b066,
     0 -0.8px 4px #8c45ff05,
@@ -137,12 +135,9 @@
     0 -20px 400px var(--purple-light);
 
   z-index: -3;
-}
 
-.showCaseContainer {
   /* anchors fly in effect*/
   overflow: clip;
-  position: relative;
   width: var(--full-showcase-card-width);
   height: var(--project-showcase-image-container);
 
@@ -203,5 +198,20 @@
   to {
     transform: translateY(50vh);
     opacity: 1;
+  }
+}
+
+/*===TABLET===*/
+@media screen and (max-width: 1024px) {
+  .cardSwapContainer {
+    display: none;
+  }
+
+  .showCaseContainer {
+    width: 100%;
+  }
+
+  .flyInFromBottom {
+    right: var(--padding-5);
   }
 }
