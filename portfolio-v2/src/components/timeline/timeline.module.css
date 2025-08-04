@@ -1,176 +1,181 @@
 .timeline {
-  position: relative;
+    position: relative;
 
-  height: 100%;
-  width: 100%;
-  overflow-y: scroll;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
 
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 
-  padding-left: var(--timeline-line-left-padding);
-  transition: opacity 0.4s ease-in-out;
+    padding-left: var(--timeline-line-left-padding);
+    transition: opacity 0.4s ease-in-out;
 }
 
 .blur {
-  opacity: 1;
-  /* use only very light grays, and move the fade-in/out to ~8% from each edge */
-  mask-image: linear-gradient(
-    to bottom,
-    transparent 0%,
-    #f5f5f5 8%,
-    #ffffff 50%,
-    #f5f5f5 92%,
-    transparent 100%
-  );
+    opacity: 1;
+    /* use only very light grays, and move the fade-in/out to ~8% from each edge */
+    mask-image: linear-gradient(
+            to bottom,
+            transparent 0%,
+            #f5f5f5 8%,
+            #ffffff 50%,
+            #f5f5f5 92%,
+            transparent 100%
+    );
 }
 
 .specialCard {
-  margin-left: 2rem;
+    margin-left: 2rem;
 
-  height: auto;
+    height: auto;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .specialCard h3 {
-  font-size: var(--font-size-2);
-  font-weight: 700;
-  color: var(--dark-grey);
+    font-size: var(--font-size-2);
+    font-weight: 700;
+    color: var(--dark-grey);
 }
 
 .firstDot {
-  background-color: var(--timeline-dot-bg);
-  border: 0.01rem solid var(--white);
+    background-color: var(--timeline-dot-bg);
+    border: 0.01rem solid var(--white);
 
-  position: sticky;
+    position: sticky;
 
-  margin-left: -7px; /*Adjust dot to be on line*/
+    margin-left: -7px; /*Adjust dot to be on line*/
 
-  width: 1rem;
-  height: 1rem;
-  border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
 }
 
 .timeline::-webkit-scrollbar {
-  display: none; /* Hides the scrollbar */
+    display: none; /* Hides the scrollbar */
 }
 
 .timelineItem {
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: var(--padding-2);
-  width: 100%;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: var(--padding-2);
+    width: 100%;
 }
 
 .marker {
-  position: absolute;
-  top: 45%;
-  left: 0;
-  transform: translateX(-50%);
-  pointer-events: none;
+    position: absolute;
+    top: 45%;
+    left: 0;
+    transform: translateX(-50%);
+    pointer-events: none;
 }
 
 .dot {
-  display: block;
-  width: 1rem;
-  height: 1rem;
-  border-radius: 50%;
-  background-color: var(--timeline-dot-bg);
-  border: 0.01rem solid var(--white);
-  box-sizing: border-box;
-  transition: background-color 0.3s ease;
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: var(--timeline-dot-bg);
+    border: 0.01rem solid var(--white);
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
 
-  z-index: var(--layer-2);
+    z-index: var(--layer-2);
 }
 
 .line {
-  position: sticky;
-  top: 0;
-  left: 0;
-  width: 0.1rem;
-  height: 100%;
-  background-color: var(--timeline-line-bg-colour);
-  z-index: var(--layer-1);
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 0.1rem;
+    height: 100%;
+    background-color: var(--timeline-line-bg-colour);
+    z-index: var(--layer-1);
 }
 
 .card {
-  margin-left: 2rem;
+    margin-left: 2rem;
+    border-radius: var(--border-radius-05);
+    box-shadow: var(--timeline-card-shadow);
+    padding: var(--padding-1) var(--padding-15);
 
-  border-radius: var(--border-radius-05);
-  box-shadow: var(--timeline-card-shadow);
-  padding: var(--padding-1) var(--padding-15);
+    width: 90%;
+    transition: all 0.4s ease-in-out;
 
-  width: 90%;
-  transition: all 0.4s ease-in-out;
-
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 
 .card:hover {
-  transform: scale(1.02);
+    transform: scale(1.02);
 }
 
 .date {
-  font-size: 0.75rem;
-  color: var(--timeline-date-color);
-  margin-bottom: 0.25rem;
+    font-size: 0.75rem;
+    color: var(--timeline-date-color);
+    margin-bottom: 0.25rem;
 }
 
 /* Title styling. Bold and slightly larger than the body text. */
 .title {
-  margin: 0;
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: var(--timeline-title-color);
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--timeline-title-color);
 }
 
 /* Company name styling. Slightly smaller than the title and muted. */
 .company {
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--timeline-company-color);
-  margin: 0 0 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--timeline-company-color);
+    margin: 0 0 0.5rem;
 }
 
 /* Description styling. Multi‑line paragraphs with comfortable
    line‑height for readability. */
 .description {
-  margin: 0;
-  font-size: 0.875rem;
-  color: var(--timeline-description-color);
-  line-height: 1.6;
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--timeline-description-color);
+    line-height: 1.6;
 }
 
 /* Responsive adjustments. On small viewports reduce spacing and
    padding for better fit. */
 @media (max-width: 40rem) {
-  .timeline {
-    padding-left: 2rem;
-  }
+    .timeline {
+        padding-left: 2rem;
+    }
 
-  .timelineItem {
-    margin-bottom: 2rem;
-  }
+    .timelineItem {
+        margin-bottom: 2rem;
+    }
 
-  .card {
-    padding: 0.75rem 1rem;
-  }
+    .card {
+        padding: 0.75rem 1rem;
+    }
 
-  .title {
-    font-size: 1rem;
-  }
+    .title {
+        font-size: 1rem;
+    }
 
-  .company {
-    font-size: 0.875rem;
-  }
+    .company {
+        font-size: 0.875rem;
+    }
 
-  .description {
-    font-size: 0.8125rem;
-  }
+    .description {
+        font-size: 0.8125rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .card {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
 }
