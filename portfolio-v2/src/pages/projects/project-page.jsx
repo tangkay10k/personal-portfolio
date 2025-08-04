@@ -35,7 +35,7 @@ export default function ProjectsPage() {
 
       <div className={styles.cardSwapContainer}>
         <Delayed delay={PROJECTS_DELAY}>
-          <CardSwap pauseOnHover={true}>
+          <CardSwap pauseOnHover={true} skewAmount={3}>
             {PROJECTS.map((project) => (
               <Card customClass={styles.projectDisplayCard}>
                 <h1>{project.title}</h1>
@@ -87,6 +87,7 @@ function ShowCaseAbout({ currentIndex, setCurrentIndex, projectOnDisplay }) {
           <Button onClick={showNext}>View Next</Button>
         </section>
       </Delayed>
+      <div className={styles.skeleton} />
     </section>
   );
 }
