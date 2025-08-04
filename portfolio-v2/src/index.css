@@ -62,12 +62,10 @@
 
   --home-page-container-height: 70vh;
   --nav-height: 5rem;
-  --project-text-card-height: 33vh;
+  --project-text-card-height: 40vh;
 
-  --full-showcase-card-width: 50vw;
-  --project-showcase-image-container: calc(
-    65vh - var(--project-text-card-height)
-  );
+  --full-showcase-card-width: 45vw;
+  --project-showcase-image-container: var(--project-text-card-height);
 
   /*===COLOURS===*/
   --black: #000000;
