@@ -1,0 +1,20 @@
+# fly.toml app configuration file generated for personal-portfolio-tangkay10k on 2025-09-01T11:42:51+12:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'personal-portfolio-tangkay10k'
+primary_region = 'syd'
+
+[build]
+
+[http_service]
+  internal_port = 80
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  size = 'shared-cpu-1x'
